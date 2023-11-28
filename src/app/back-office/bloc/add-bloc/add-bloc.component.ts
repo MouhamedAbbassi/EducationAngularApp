@@ -9,9 +9,12 @@ import { BlocService } from 'src/app/Services/Bloc/bloc.service';
   styleUrls: ['./add-bloc.component.css']
 })
 export class AddBlocComponent {
+  foyerNames: string[] = [];
+  selectedFoyer: string = "Select Foyer";
+
 
   constructor(private es: BlocService, private router: Router) { }
-  ngOnInit(): void {}
+  ngOnInit(): void {this.fetchFoyerNames()}
 
 
   addBloc(blocData: any) {
@@ -29,6 +32,18 @@ export class AddBlocComponent {
           console.error('Error adding Etudiant:', error);
           // Handle the error as needed, e.g., display an error message to the user
         }
+      }
+    );
+  }
+
+
+  fetchFoyerNames() {
+    this.es.getFoyerNames().subscribe(
+      names => {
+        this.foyerNames = names;
+      },
+      error => {
+        console.error('Error fetching foyer names:', error);
       }
     );
   }
