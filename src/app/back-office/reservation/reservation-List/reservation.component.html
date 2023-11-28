@@ -1,0 +1,43 @@
+<div class="text-center" style="margin-top: 100px;">
+<h2 class="display-4">Reservation List</h2>
+
+
+  <button type="button" routerLink="add" routerLinkActive="active" class="btn btn-outline-success">
+    <i class="fa fa-plus" aria-hidden="true"></i> Ajouter
+  </button>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Annee Universaire</th>
+        <th>Numero de Chambre</th>
+        <th>Type de Chambre</th>
+        <th>Cin Etudiant</th>
+        <th>Choix Reservation</th>
+        <th>Actions</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Reservation of Reservations  " >
+        <td>{{ Reservation.anneeUniversaire }}</td>
+        <td>{{ Reservation.chambre.numeroChambre }}</td>
+        <td>{{ Reservation.chambre.typeChambre }}</td>
+        <td *ngIf="Reservation.chambre.numeroChambre">{{ Reservation.etudiant.cin }}</td>
+        <td>{{ Reservation.choixReservation }}</td>
+        <td>
+          <button [routerLink]="['update-reservation', Reservation.idReservation]" class="btn btn-primary">
+            <i class="fa fa-edit"></i> Modifier
+          </button>&nbsp;
+          <button (click)="deleteReservation(Reservation.idReservation)" class="btn btn-outline-danger">
+            <i class="fa-trash" aria-hidden="true"></i> Supprimer
+          </button>
+
+      </tr>
+    
+    </tbody>
+  </table>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>

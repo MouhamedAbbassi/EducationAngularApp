@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationComponent } from './reservation-List/reservation.component';
+import { AddReservationComponent } from './add-reservation/add-reservation.component';
+import { UpdateReservationComponent } from './update-reservation/update-reservation.component';
 
 const routes: Routes = [
-  {path:"list", component:ReservationComponent}
+  {path:"list", component:ReservationComponent},
+  {path:'list/add',component: AddReservationComponent},
+  { path:'list/update-reservation/:idReservation', component: UpdateReservationComponent },
+
+
 
 ];
 

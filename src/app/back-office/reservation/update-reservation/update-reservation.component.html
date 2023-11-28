@@ -1,0 +1,20 @@
+<h3>Update Reservation</h3>
+<form (ngSubmit)="onSubmit()">
+    <div class="form_group" *ngIf="reservation && reservation.chambre">
+        <label>Num chambre : </label>
+        <input type="text" class="form-control" id="numeroChambre"
+        [(ngModel)]="reservation.chambre.numeroChambre" name="numeroChambre">
+    </div>
+    <div class="form_group" *ngIf="reservation && reservation.chambre">
+        <label>Type Chambre:</label>
+        <select class="form-control" id="typeChambre" [(ngModel)]="reservation.chambre.typeChambre" name="typeChambre">
+            <option value="SIMPLE" >Simple</option>
+            <option value="DOUBLE">Double</option>
+            <option value="TRIPLE" >Triple</option>
+        </select>
+    </div>
+
+
+    <button class="btn btn-success" type="submit">Submit</button>&nbsp;
+    <button class="btn btn-secondary" type="submit" (click)="retour()"><i class="fa fa-save"></i>Retour</button>
+</form>

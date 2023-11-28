@@ -2,7 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ReservationRoutingModule } from './reservation-routing.module';
-import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationComponent } from './reservation-List/reservation.component';
+import {HttpClientModule} from '@angular/common/http' ;
+import { FormsModule } from '@angular/forms';
+
+
+
 
 
 @NgModule({
@@ -11,7 +16,12 @@ import { ReservationComponent } from './reservation/reservation.component';
   ],
   imports: [
     CommonModule,
-    ReservationRoutingModule
+    ReservationRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    FormsModule,
+
+
   ]
 })
 export class ReservationModule { }
