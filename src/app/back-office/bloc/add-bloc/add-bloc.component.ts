@@ -18,6 +18,8 @@ export class AddBlocComponent {
 
 
   addBloc(blocData: any) {
+
+    console.log("bloc data :"+blocData);
     this.es.addBloc(blocData).subscribe(
       () => {
         // Handle a successful response (status code 200) here

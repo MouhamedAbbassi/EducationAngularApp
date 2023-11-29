@@ -11,8 +11,8 @@
     <div class="grid md:grid-cols-1 md:gap-3" style="max-width: 50%;">
 
       <div class="relative z-0 w-full mb-5 group">
-        <label for="nomFoyer" class= ""   ></label>
-      <select  id="nomFoyer" name="nomFoyer"   class="  text-black  rounded-lg    block w-full p-2.5 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <label for="nomFoyer" class= ""   > </label>
+      <select  id="nomFoyer" name="nomFoyer" [(ngModel)]="selectedFoyer" class="  text-black  rounded-lg    block w-full p-2.5 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         <option value="" disabled selected>Select Foyer</option>
 
         <option *ngFor="let nomFoyer of foyerNames" [value]="nomFoyer">{{ nomFoyer }}</option>
