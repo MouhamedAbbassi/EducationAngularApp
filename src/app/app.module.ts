@@ -10,6 +10,13 @@ import { UserModule } from './user/user.module';
 import { AddReservationComponent } from './back-office/reservation/add-reservation/add-reservation.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateReservationComponent } from './back-office/reservation/update-reservation/update-reservation.component';
+import { QRCodeModule } from 'angularx-qrcode';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ChartDemoComponent } from './back-office/reservation/chart-demo/chart-demo.component';
+
+
+
+
 
 
 @NgModule({
@@ -17,7 +24,8 @@ import { UpdateReservationComponent } from './back-office/reservation/update-res
     AppComponent,
     NotFoundComponent,
     AddReservationComponent,
-    UpdateReservationComponent
+    UpdateReservationComponent,
+    ChartDemoComponent
    ],
   imports: [
     BrowserModule,
@@ -26,7 +34,10 @@ import { UpdateReservationComponent } from './back-office/reservation/update-res
     BackOfficeModule,
     UserModule,
     FormsModule,
-    
+    QRCodeModule,
+    Ng2SearchPipeModule,
+
+
 
   ],
   providers: [],

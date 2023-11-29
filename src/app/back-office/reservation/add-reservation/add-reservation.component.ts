@@ -74,5 +74,9 @@ export class AddReservationComponent implements OnInit {
     this.getNotReservedRooms()
     this.getEtudiantWithoutReservation()
   }
+  retour(){
+    this.router.navigate(['/back/reservation/list']);
+
+  }
 
 }
