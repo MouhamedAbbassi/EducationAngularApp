@@ -7,6 +7,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { FrontOfficeModule } from './front-office/front-office.module';
 import { BackOfficeModule } from './back-office/back-office.module';
 import { UserModule } from './user/user.module';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ToastrModule} from "ngx-toastr";
+import {authInterceptorProviders} from "./helper/auth.interceptor";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
 
 @NgModule({
   declarations: [
@@ -16,11 +22,19 @@ import { UserModule } from './user/user.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FrontOfficeModule,
     BackOfficeModule,
-    UserModule
+    UserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      // Toastr configuration options
+    }),
+
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
