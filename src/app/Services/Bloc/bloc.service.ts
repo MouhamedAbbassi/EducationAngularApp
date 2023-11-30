@@ -11,17 +11,17 @@ export class BlocService {
   constructor(private  httpClient:HttpClient) { }
 
   getAllData(): Observable<Bloc[]> {
-    return this.httpClient.get<Bloc[]> ('http://localhost:9090/bloc/blocs');
+    return this.httpClient.get<Bloc[]> ('http://localhost:8080/bloc/blocs');
   }
   addBloc(bloc: any) {
-    return this.httpClient.post('http://localhost:9090/bloc/foyers/addBloc', bloc)
+    return this.httpClient.post('http://localhost:8080/bloc/foyers/addBloc', bloc)
  }
  deleteBloc(id:any) {
-  return this.httpClient.delete('http://localhost:9090/bloc/delete/'+id);
+  return this.httpClient.delete('http://localhost:8080/bloc/delete/'+id);
 }
 
 getFoyerNames(): Observable<string[]> {
-  return this.httpClient.get<string[]>('http://localhost:9090/bloc/foyernames');
+  return this.httpClient.get<string[]>('http://localhost:8080/bloc/foyernames');
 }
 
 

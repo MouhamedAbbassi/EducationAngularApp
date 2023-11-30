@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BackOfficeComponent } from './back-office.component';
 import { HomeBackComponent } from './home-back/home-back.component';
+import {AdminGuard} from "../helper/admin.guard";
 
 const routes: Routes = [
   {path: '',
+    canActivate:[AdminGuard],
     component: BackOfficeComponent,
     children: [
       {path:"bloc",loadChildren:()=>
