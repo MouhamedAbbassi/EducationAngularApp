@@ -7,6 +7,10 @@ import { HomeBackComponent } from './home-back/home-back.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavComponent } from './nav/nav.component';
 import { BlocModule } from './bloc/bloc.module';
+import {HttpClientModule} from '@angular/common/http' ;
+import { FormsModule } from '@angular/forms';
+
+
 
 
 
@@ -23,7 +27,9 @@ import { BlocModule } from './bloc/bloc.module';
   imports: [
     CommonModule,
     BackOfficeRoutingModule,
-    BlocModule
+    BlocModule,
+    HttpClientModule,
+    FormsModule,
   ]
 })
 export class BackOfficeModule { }
