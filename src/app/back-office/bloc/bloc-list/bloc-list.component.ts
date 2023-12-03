@@ -16,10 +16,10 @@ constructor(private es: BlocService,private ac:ActivatedRoute,private router:Rou
 ngOnInit(): void {
   this.es.getAllData().subscribe((response) => {this.bloc = response})
 
-  this.es.deleteBloc(this.ac.snapshot.params['idBloc']).subscribe(
+  /*this.es.deleteBloc(this.ac.snapshot.params['idBloc']).subscribe(
     ()=>
       this.router.navigate(['back/bloc/bloclist'])
-  )
+  )*/
 }
 
 delete(id:any)

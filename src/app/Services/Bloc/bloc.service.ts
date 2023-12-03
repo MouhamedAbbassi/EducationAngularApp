@@ -23,6 +23,11 @@ export class BlocService {
 getFoyerNames(): Observable<string[]> {
   return this.httpClient.get<string[]>('http://localhost:8080/bloc/foyernames');
 }
-
+editBloc(id: any,bloc:any): Observable<any> {
+  return this.httpClient.put('http://localhost:8080/bloc/update/'+id, bloc);
+}
+getBloc(id:any) {
+  return this.httpClient.get('http://localhost:8080/bloc/getId/'+id);
+}
 
 }

@@ -28,8 +28,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
     HttpClientModule,
     UserModule,
-     HttpClientModule,
-    FormsModule,
+     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
       // Toastr configuration options
