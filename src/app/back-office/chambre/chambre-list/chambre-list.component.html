@@ -51,9 +51,9 @@
                 <span>{{ chambre.typeChambre }}</span>
               </td>
               <td class="p-4 whitespace-nowrap">
-               <!--
- <button routerLink="/back/bloc/editbloc" class="bg-green-500 text-white py-1 px-2 rounded-full text-xs ">update</button>
-                 --> <button (click)="delete(chambre.idChambre)" class="bg-red-500 text-white py-1 px-2 rounded-full text-xs ml-1">delete</button>
+                <button [routerLink]="['/back/chambre/editchambre',chambre.idChambre]"class="bg-green-500 text-white py-1 px-2 rounded-full text-xs ">update</button>
+
+                <button (click)="delete(chambre.idChambre)" class="bg-red-500 text-white py-1 px-2 rounded-full text-xs ml-1">delete</button>
 
 
                 </td>

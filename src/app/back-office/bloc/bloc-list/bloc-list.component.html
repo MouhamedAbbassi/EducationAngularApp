@@ -1,4 +1,4 @@
- 
+
 
 <div class="flex justify-center items-center h-screen ">
   <div class="shadow-lg rounded-lg  w-full max-w-xl" style="max-width: 70%;" >
@@ -49,12 +49,12 @@
                 <span>{{ bloc.capaciteBloc }}</span>
               </td>
               <td class="p-4 whitespace-nowrap">
-                <button routerLink="/back/bloc/editbloc" class="bg-green-500 text-white py-1 px-2 rounded-full text-xs ">update</button>
+                <button [routerLink]="['/back/bloc/editbloc',bloc.idBloc]"class="bg-green-500 text-white py-1 px-2 rounded-full text-xs ">update</button>
                 <button (click)="delete(bloc.idBloc)" class="bg-red-500 text-white py-1 px-2 rounded-full text-xs ml-1">delete</button>
 
                 </td>
                 <td>
-                  
+
                 </td>
             </tr>
 
