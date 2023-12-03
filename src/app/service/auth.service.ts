@@ -18,18 +18,18 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   signup(user: any) {
-    return this.http.post('http://localhost:9090/api/auth/signup', user, httpOptions);
+    return this.http.post('http://localhost:8080/api/auth/signup', user, httpOptions);
   }
 
   login(user: any) {
-    return this.http.post('http://localhost:9090/api/auth/login', user);
+    return this.http.post('http://localhost:8080/api/auth/login', user);
   }
 
   getCurrentuser() {
-    return this.http.get('http://localhost:9090/api/user/current-user');
+    return this.http.get('http://localhost:8080/api/user/current-user');
   }
 
   test() {
-    return this.http.get('http://localhost:9090/api/user');
+    return this.http.get('http://localhost:8080/api/user');
   }
 }
