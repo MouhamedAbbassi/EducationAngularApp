@@ -10,12 +10,12 @@ import { Etudiant } from '../model/etudiant';
 })
 export class ReservationService implements OnInit {
 
-  private baseURL="http://localhost:9090/api/v1/reservation";
-  private baseURLNot="http://localhost:9090/api/v1/reservation/not-reserved";
-  private baseURLEtud="http://localhost:9090/api/v1/reservation/students-without-reservation";
-  private baseURLGet="http://localhost:9090/api/v1/reservation/update";
-  private baseURLGetId="http://localhost:9090/api/v1/reservation/getBy";
-  private baseURLGetSupp="http://localhost:9090/api/v1/reservation/delete";
+  private baseURL="http://localhost:8080/api/v1/reservation";
+  private baseURLNot="http://localhost:8080/api/v1/reservation/not-reserved";
+  private baseURLEtud="http://localhost:8080/api/v1/reservation/students-without-reservation";
+  private baseURLGet="http://localhost:8080/api/v1/reservation/update";
+  private baseURLGetId="http://localhost:8080/api/v1/reservation/getBy";
+  private baseURLGetSupp="http://localhost:8080/api/v1/reservation/delete";
 
   constructor(private httpClient:HttpClient) { }
 

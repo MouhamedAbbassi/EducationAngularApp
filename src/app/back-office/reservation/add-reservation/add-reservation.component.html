@@ -1,17 +1,14 @@
-<div class="container">
-    <div class="row">
-      <div class="col-md-10 mt-10 mx-auto">
-        <div class="text-container">
-          <div class="text-center">
+<div class="px-4 pt-4 py-5" style="margin-top: 50px; margin-left: 30px; ">
+    <div class="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10">
         <form (ngSubmit)="ajouterReservation()" #f="ngForm">
             <div class="row">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="nomFoyer">Anne de Reservation</label>
-                            <input type="date" class="form-control" id="anneeUniversaire" name="anneeUniversaire" [(ngModel)]="Reservations.anneeUniversaire" ngModel required #l="ngModel">
+                            <input type="date" class="form-control" id="anneeUniversaire" name="anneeUniversaire" [(ngModel)]="Reservations.anneeUniversaire" ngModel required #b="ngModel">
                         </div>
-                        <div class="alert alert-danger" *ngIf="l.invalid && l.touched">
+                        <div class="alert alert-danger" *ngIf="b.invalid && b.touched">
                            l' annee est obligatoire !!
                         </div>
                     </div>
@@ -37,11 +34,14 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="etudiant">your Cin:</label>
-                            <select class="form-control" id="etudiant" name="selectedEtudiant" [(ngModel)]="selectedEtudiant" ngModel required>
+                            <select class="form-control" id="etudiant" name="selectedEtudiant" [(ngModel)]="selectedEtudiant" ngModel required #l="ngModel">
                                 <option *ngFor="let etudiant of EtudiantWithoutReservation" [ngValue]="etudiant">
                                     {{ etudiant.cin }}
                                 </option>
                             </select>
+                        </div>
+                        <div class="alert alert-danger" *ngIf="l.invalid && l.touched">
+                            The Chambre est obligatoire !!
                         </div>
                     </div>
                 </div>
@@ -53,3 +53,7 @@
         </form  >
     </div>
 </div>
+
+
+
+
