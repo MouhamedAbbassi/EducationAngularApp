@@ -8,14 +8,13 @@ import { BackOfficeModule } from './back-office/back-office.module';
 import { UserModule } from './user/user.module';
 import { AddReservationComponent } from './back-office/reservation/add-reservation/add-reservation.component';
 import { UpdateReservationComponent } from './back-office/reservation/update-reservation/update-reservation.component';
-import { QRCodeModule } from 'angularx-qrcode';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { ChartDemoComponent } from './back-office/reservation/chart-demo/chart-demo.component';
+ import { ChartDemoComponent } from './back-office/reservation/chart-demo/chart-demo.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ToastrModule} from "ngx-toastr";
 import {authInterceptorProviders} from "./helper/auth.interceptor";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -37,8 +36,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HttpClientModule,
     UserModule,
     FormsModule,
-    QRCodeModule,
-    Ng2SearchPipeModule,
+     Ng2SearchPipeModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
       // Toastr configuration options
