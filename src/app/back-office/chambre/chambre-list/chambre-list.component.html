@@ -1,4 +1,3 @@
- 
 
 <div class="flex justify-center items-center h-screen ">
   <div class="shadow-lg rounded-lg  w-full max-w-xl" style="max-width: 70%;" >
@@ -18,14 +17,14 @@
                 Bloc Name
               </th>
               <th scope="col" class="p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white">
-                Foyer Name
+                Room N°
               </th>
               <th scope="col" class="p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white">
-                Capacity
+                Type
               </th>
 
               <th scope="col" class="p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white">
-                Status
+                Acltion
               </th>
               <th>
                 <a  routerLink="/back/bloc/addbloc" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"> Add</a>
@@ -33,28 +32,30 @@
               </th>
             </tr>
           </thead>
-          <tbody class="bg-gray-200 dark:bg-gray-100"  *ngFor="let bloc of bloc">
+          <tbody class="bg-gray-200 dark:bg-gray-100"  *ngFor="let chambre of chambre">
 
 
 
             <tr>
               <td class="p-4 text-sm font-normal text-gray whitespace-nowrap dark:text-gary">
-                {{ bloc.nomBloc }}
+                {{ chambre.nomBloc }}
               </td>
 
               <td class="p-4 text-sm font-normal text-gray whitespace-nowrap dark:text-gray">
-                {{ bloc.nomFoyer }}
+                {{ chambre.numChambre }}
               </td>
               <td class="p-4 text-sm font-normal text-gray whitespace-nowrap dark:text-gray">
-                <span>{{ bloc.capaciteBloc }}</span>
+                <span>{{ chambre.typeChambre }}</span>
               </td>
               <td class="p-4 whitespace-nowrap">
-                <button routerLink="/back/bloc/editbloc" class="bg-green-500 text-white py-1 px-2 rounded-full text-xs ">update</button>
+               <!--
+ <button routerLink="/back/bloc/editbloc" class="bg-green-500 text-white py-1 px-2 rounded-full text-xs ">update</button>
                 <button (click)="delete(bloc.idBloc)" class="bg-red-500 text-white py-1 px-2 rounded-full text-xs ml-1">delete</button>
 
+               -->
                 </td>
                 <td>
-                  
+
                 </td>
             </tr>
 

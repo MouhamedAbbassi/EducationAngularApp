@@ -32,16 +32,20 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserAnimationsModule,
     FrontOfficeModule,
     BackOfficeModule,
+ 
+
+    HttpClientModule,
     UserModule,
     FormsModule,
     QRCodeModule,
     Ng2SearchPipeModule,
-    HttpClientModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
       // Toastr configuration options
-    })
-  ],
+    }),
+
+   ],
+
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
