@@ -14,11 +14,15 @@ export class ChambreListComponent {
 
 ngOnInit(): void {
   this.es.getAllData().subscribe((response) => {this.chambre = response})
-
-  /*this.es.deleteBloc(this.ac.snapshot.params['idBloc']).subscribe(
-    ()=>
-      this.router.navigate(['back/bloc/bloclist'])
-  )*/
+}
+delete(id:any)
+{
+ this.es.deleteChambre(id).subscribe(()=>{
+    // this.es.getAllData().subscribe((response) => {this.etudiants = response})
+   this.chambre= this.chambre.filter((chambre:any)=>chambre.idChambre!=id)
+ },error =>{
+   console.log(error);
+ });
 }
 
 }

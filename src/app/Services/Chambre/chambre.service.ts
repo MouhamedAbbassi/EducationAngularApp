@@ -14,4 +14,17 @@ export class ChambreService {
   getAllData(): Observable<Chambre[]> {
     return this.httpClient.get<Chambre[]> ('http://localhost:8080/chambre/chambres');
   }
+
+  addChambre(chambre: any) {
+    return this.httpClient.post('http://localhost:8080/chambre/blocs/addChambre', chambre)
+ }
+
+ getBlocNames(): Observable<string[]> {
+  return this.httpClient.get<string[]>('http://localhost:8080/chambre/blocnames');
+}
+
+deleteChambre(id:any) {
+  return this.httpClient.delete('http://localhost:8080/chambre/delete/'+id);
+}
+
 }
