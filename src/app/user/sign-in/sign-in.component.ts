@@ -35,24 +35,20 @@ export class SignInComponent implements OnInit{
                ) {
   }
   ngOnInit(): void {
-    const token :string =this.tokenStorage.getToken();
-    if(token)
+
+    console.log(this.tokenStorage.getRole());
+    const userRole=this.tokenStorage.getRole();
+    if(userRole && userRole.includes('ADMIN'))
     {
-        if(this.isValidToken(token))
-        {
-          this.fetchCurrentUser();
-
-        }
-
-
-
+      this.router.navigate(['/back/dashboard']);
+    }
+    else if(userRole && userRole.includes('USER'))
+    {
+      this.router.navigate(['/front']);
 
     }
     else {
-      //rederick to login and clear localstor
-      this.tokenStorage.signOut();
       this.router.navigate(['user/signin']);
-
     }
 
 
@@ -84,11 +80,14 @@ export class SignInComponent implements OnInit{
       {
         console.log("admin dashboard");
         this.router.navigate(['/back/dashboard']);
+        this.authService.loginStatusSubject.next(true);
       }
 
       else if(userRoles && userRoles.includes('USER'))
       {
         console.log("user dashboard");
+        this.router.navigate(['/front']);
+        this.authService.loginStatusSubject.next(true);
 
 
       }

@@ -1,16 +1,17 @@
-import { Etudiant } from 'src/app/model/etudiant';
+
 import { Chambre } from 'src/app/model/chambre';
-import { ChoixReservation } from 'src/app/model/choixReservation.enum';
+import {User} from "../service/user.service";
 
 
 
 export class Reservation {
 
-   
-    idReservation: number;
-    anneeUniversaire: Date;
-    chambre: Chambre;
-    etudiant: Etudiant;
-    choixReservation!: ChoixReservation[];
+
+
+  idReservation: number;
+  anneeUniversaire: Date;
+  chambre: Chambre;
+  etudiant: { id: number; email: String; username: String };
 
 }
+
