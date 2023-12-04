@@ -7,13 +7,16 @@ const routes: Routes = [
   {path:"front",loadChildren:()=>
   import('./front-office/front-office.module').then(m=>(m).FrontOfficeModule)},
   {path:"back",loadChildren:()=>
+
   import('./back-office/back-office.module').then(m=>(m).BackOfficeModule)},
   {path:"user",loadChildren:()=>
   import('./user/user.module').then(m=>m.UserModule)},
+
+
   {path: '', redirectTo: 'user/signin', pathMatch: 'full' },
   {path:"**", component:NotFoundComponent},
 
-];
+ ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

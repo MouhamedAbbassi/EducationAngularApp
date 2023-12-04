@@ -1,4 +1,5 @@
 <div class="container">
+<<<<<<< HEAD
   <div class="row">
     <div class="col-md-7 mt-10 mx-auto">
       <div class="text-container">
@@ -36,3 +37,34 @@
   </div>
 
 </div>
+=======
+    <div class="row">
+      <div class="col-md-7 mt-10 mx-auto">
+        <div class="text-container">
+          <div class="text-center">
+<h3>Update Reservation</h3>
+<form (ngSubmit)="onSubmit()">
+    <div class="form_group" *ngIf="reservation && reservation.chambre">
+        <label>Num chambre : </label>
+        <input type="text" class="form-control" id="numeroChambre"
+        [(ngModel)]="reservation.chambre.numeroChambre" name="numeroChambre">
+    </div>
+    <div class="form_group" *ngIf="reservation && reservation.chambre">
+        <label>Type Chambre:</label>
+        <select class="form-control" id="typeChambre" [(ngModel)]="reservation.chambre.typeChambre" name="typeChambre">
+            <option value="SIMPLE" >Simple</option>
+            <option value="DOUBLE">Double</option>
+            <option value="TRIPLE" >Triple</option>
+        </select>
+    </div>
+
+    <button class="btn btn-warning" type="submit" (click)="retour()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <button class="btn btn-info" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>&nbsp;
+</form>
+</div>
+</div>
+</div>
+</div>
+
+>>>>>>> ea09540995da44f5173cec1571789c7f55553326

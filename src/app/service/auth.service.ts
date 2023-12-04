@@ -17,26 +17,21 @@ const httpOptions = {
 export class AuthService {
   public loginStatusSubject =new Subject<boolean>();
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  signup(user:any)
-  {
-    return this.http.post(AppConstants.AUTH_API+'signup',user,httpOptions);
+  signup(user: any) {
+    return this.http.post('http://localhost:8080/api/auth/signup', user, httpOptions);
   }
-  login(user:any)
-  {
-    return this.http.post(AppConstants.AUTH_API+'login',user);
+
+  login(user: any) {
+    return this.http.post('http://localhost:8080/api/auth/login', user);
   }
-  getCurrentuser()
-  {
-    //return this.http.get(AppConstants.API_BASE_URL+'api/user/current-user');
+
+  getCurrentuser() {
     return this.http.get('http://localhost:8080/api/user/current-user');
   }
-  test()
-  {
+
+  test() {
     return this.http.get('http://localhost:8080/api/user');
-
   }
-
-
 }

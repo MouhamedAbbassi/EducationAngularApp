@@ -10,10 +10,14 @@ const routes: Routes = [
   {path: '',
     component: UserComponent,
     children: [
+<<<<<<< HEAD
       {path:"signin",component:SignInComponent},
       {path:"reset",component:ResetComponent},
       {path:"reset-password-done",component:ResetPasswordDoneComponent},
       {path:"register",component:RegisterComponent},
+=======
+      {path:"signin",component:SignInComponent}
+>>>>>>> ea09540995da44f5173cec1571789c7f55553326
 ]}];
 
 @NgModule({
