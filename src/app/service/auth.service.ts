@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {AppConstants} from "../commons/app.constant";
+import {Subject} from "rxjs";
 const httpOptions = {
   headers: new HttpHeaders({
 
@@ -14,6 +15,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  public loginStatusSubject =new Subject<boolean>();
 
   constructor(private http:HttpClient) { }
 
