@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ChambreService } from 'src/app/Services/Chambre/chambre.service';
+import { TypeChambre } from 'src/app/model/TypeChambre.enum';
 
 @Component({
   selector: 'app-add-chambre',
@@ -10,8 +11,11 @@ import { ChambreService } from 'src/app/Services/Chambre/chambre.service';
 })
 export class AddChambreComponent {
 
+TypeChambre = TypeChambre;
+
+
   blocNames: string[] = [];
-  selectedBloc: string = "Select Bloc";
+  selectedBloc: string = "";
 
 
   constructor(private es: ChambreService, private router: Router) { }
