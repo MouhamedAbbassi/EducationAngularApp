@@ -41,10 +41,12 @@ applyFilter() {
   console.log('Filter applied:', this.nomBlocFilter);
   if (this.nomBlocFilter.trim() === '') {
     this.filteredChambres = this.chambre;
-
-}else
- {  this.filteredChambres= this.chambre.filter((chambre:any)=>chambre.nomBloc==this.nomBlocFilter)};
-
+  } else {
+    this.filteredChambres = this.chambre.filter(
+      (chambre: any) =>
+        chambre.nomBloc.toLowerCase() === this.nomBlocFilter.toLowerCase()
+    );
+  }
 }
 
 
