@@ -3,19 +3,38 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ChambreService } from 'src/app/Services/Chambre/chambre.service';
 import { TypeChambre } from 'src/app/model/TypeChambre.enum';
+import { trigger, style, animate, transition, state } from '@angular/animations';
 
 @Component({
   selector: 'app-add-chambre',
   templateUrl: './add-chambre.component.html',
-  styleUrls: ['./add-chambre.component.css']
+  styleUrls: ['./add-chambre.component.css'],
+  animations: [
+    trigger('buttonAnimation', [
+      state('enabled', style({
+        transform: 'translateX(0)',
+      })),
+      state('left', style({
+        transform: 'translateX(-100px)', // Adjust the value based on your preference
+      })),
+
+      state('right', style({
+        transform: 'translateX(150px)', // Adjust the value based on your preference
+      })),
+
+      transition('* => left', animate('200ms ease-out')),
+      transition('* => right', animate('200ms ease-out')),
+      transition('* => enabled', animate('200ms ease-out')),
+    ]),
+  ],
 })
 export class AddChambreComponent {
 
-TypeChambre = TypeChambre;
+TypeChambre = TypeChambre ;
 
 
   blocNames: string[] = [];
-  selectedBloc: string = "";
+  selectedBloc: string = "Select Bloc";
 
 
   constructor(private es: ChambreService, private router: Router) { }
@@ -54,6 +73,36 @@ TypeChambre = TypeChambre;
       }
     );
   }
+
+
+
+
+  buttonState = 'enabled';
+
+  onMouseEnter() {
+
+    if( this.buttonState =='enabled')
+      this.buttonState ='right'
+
+    else if(this.buttonState =='right')
+      this.buttonState = 'left';
+
+    else if(this.buttonState =='left')
+      this.buttonState = 'right';
+
+
+
+    }
+
+  onMouseLeave() {
+    if( this.buttonState =='left')
+      this.buttonState ='left'
+
+     else if(this.buttonState =='right')
+      this.buttonState = 'right';
+  }
+
+
 
 
 }

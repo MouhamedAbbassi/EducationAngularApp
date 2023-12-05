@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
  import { ChambreService } from 'src/app/Services/Chambre/chambre.service';
-import { Chambre } from 'src/app/model/chambre';
 
 @Component({
   selector: 'app-chambre-list',

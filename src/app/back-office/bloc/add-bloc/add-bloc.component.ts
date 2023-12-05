@@ -18,12 +18,12 @@ import { trigger, style, animate, transition, state } from '@angular/animations'
       })),
 
       state('right', style({
-        transform: 'translateX(100px)', // Adjust the value based on your preference
+        transform: 'translateX(150px)', // Adjust the value based on your preference
       })),
 
-      transition('* => left', animate('200ms ease-in-out')),
-      transition('* => right', animate('200ms ease-in-out')),
-      transition('* => enabled', animate('200ms ease-in-out')),
+      transition('* => left', animate('200ms ease-out')),
+      transition('* => right', animate('200ms ease-out')),
+      transition('* => enabled', animate('200ms ease-out')),
     ]),
   ],
 })
