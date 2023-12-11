@@ -27,7 +27,7 @@ delete(id:any)
 {
  this.es.deleteChambre(id).subscribe(()=>{
     // this.es.getAllData().subscribe((response) => {this.etudiants = response})
-   this.chambre= this.chambre.filter((chambre:any)=>chambre.idChambre!=id)
+   this.filteredChambres= this.chambre.filter((chambre:any)=>chambre.idChambre!=id)
  },error =>{
    console.log(error);
  });
@@ -38,8 +38,7 @@ delete(id:any)
 
 
 applyFilter() {
-  console.log('Filter applied:', this.nomBlocFilter);
-  if (this.nomBlocFilter.trim() === '') {
+   if (this.nomBlocFilter.trim() === '') {
     this.filteredChambres = this.NotfilteredChambres;
   } else {
     this.filteredChambres = this.chambre.filter(

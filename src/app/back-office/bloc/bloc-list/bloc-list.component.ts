@@ -17,7 +17,6 @@ constructor(private es: BlocService,private ac:ActivatedRoute,private router:Rou
 
 ngOnInit(): void {
   this.es.getAllData().subscribe((response) => {this.bloc = response})
-
   this.es.getAllData().subscribe((response) => {this.filteredBlocs = response})
   this.es.getAllData().subscribe((response) => {this.NotfilteredBlocs = response})
 }
@@ -26,7 +25,7 @@ delete(id:any)
 {
  this.es.deleteBloc(id).subscribe(()=>{
     // this.es.getAllData().subscribe((response) => {this.etudiants = response})
-   this.bloc= this.bloc.filter((bloc:any)=>bloc.idBloc!=id)
+   this.filteredBlocs= this.bloc.filter((bloc:any)=>bloc.idBloc!=id)
  },error =>{
    console.log(error);
  });
@@ -35,13 +34,12 @@ delete(id:any)
 
 
 applyFilter() {
-  console.log('Filter applied:', this.nomFoyerFilter);
-  if (this.nomFoyerFilter.trim() === '') {
+   if (this.nomFoyerFilter.trim() === '') {
     this.filteredBlocs = this.NotfilteredBlocs;
   } else {
-    this.filteredBlocs = this.filteredBlocs.filter(
+    this.filteredBlocs = this.bloc.filter(
       (bloc: any) =>
-        bloc.nomFoyer.toLowerCase() === this.nomFoyerFilter.toLowerCase()
+        bloc.nomBloc.toLowerCase() === this.nomFoyerFilter.toLowerCase()
     );
   }
 }

@@ -28,22 +28,25 @@
 
 
 
-      <div class="relative z-0 w-full mb-5 group">
-        <label for="typeChambre" class="text-black font-medium">Select Type</label>
-         <select
-          required
-          id="typeChambre"
-          name="typeChambre"
-          [(ngModel)]="TypeChambre" #inputname="ngModel" pattern="[a-zA-Z]*"
-          class="text-black rounded-lg block w-full p-2.5 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        >
+         <div class="relative z-0 w-full mb-5 group">
+          <label for="typeChambre" class="text-black font-medium">Select Type</label>
+          <select
+            required
+            id="typeChambre"
+            name="typeChambre"
+            [(ngModel)]="selectedType"
+            #inputname="ngModel"
+            pattern="[a-zA-Z]*"
+            class="text-black rounded-lg block w-full p-2.5 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 
-          <option [ngValue]="TypeChambre.TYPE_1">Simple</option>
-          <option [ngValue]="TypeChambre.TYPE_2">Double</option>
-          <option [ngValue]="TypeChambre.TYPE_3">Triple</option>
-        </select>
-        <small class="text text-danger" *ngIf="form.controls['typeChambre']?.errors?.['required'] && form.controls['typeChambre'].touched">Type is required</small>
-      </div>
+          >
+            <option [ngValue]="TypeChambre.TYPE_1">Simple</option>
+            <option [ngValue]="TypeChambre.TYPE_2">Double</option>
+            <option [ngValue]="TypeChambre.TYPE_3">Triple</option>
+          </select>
+          <small class="text text-danger" *ngIf="isTypeInvalid()">Type is required</small>
+        </div>
+
 
 
 

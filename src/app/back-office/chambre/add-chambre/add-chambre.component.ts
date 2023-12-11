@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ChambreService } from 'src/app/Services/Chambre/chambre.service';
 import { TypeChambre } from 'src/app/model/TypeChambre.enum';
 import { trigger, style, animate, transition, state } from '@angular/animations';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-chambre',
@@ -33,11 +34,16 @@ export class AddChambreComponent {
 TypeChambre = TypeChambre ;
 
 
+
   blocNames: string[] = [];
   selectedBloc: string = "Select Bloc";
+  form: FormGroup;
+selectedType: any;
 
 
-  constructor(private es: ChambreService, private router: Router) { }
+  constructor(private es: ChambreService, private router: Router,private fb: FormBuilder) {   this.form = this.fb.group({
+    typeChambre: ['', Validators.required]
+  }); }
   ngOnInit(): void {this.fetchBlocNames()}
 
 
@@ -62,6 +68,10 @@ TypeChambre = TypeChambre ;
     );
   }
 
+  isTypeInvalid() {
+    const control = this.form.get('typeChambre');
+    return control?.hasError('required') && control.touched;
+  }
 
   fetchBlocNames() {
     this.es.getBlocNames().subscribe(
