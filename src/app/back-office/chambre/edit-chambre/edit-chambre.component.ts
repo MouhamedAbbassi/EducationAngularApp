@@ -54,4 +54,5 @@ export class EditChambreComponent {
     //this.id= Number( this.actR.snapshot.paramMap.get('param'));
     this.actRoute.paramMap.subscribe(data => this.idChambre=Number(data.get('param')));
    }
+   
 }
