@@ -5,12 +5,14 @@ import { ChambreRoutingModule } from './chambre-routing.module';
 import { ChambreListComponent } from './chambre-list/chambre-list.component';
 import { AddChambreComponent } from './add-chambre/add-chambre.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditChambreComponent } from './edit-chambre/edit-chambre.component';
 
 
 @NgModule({
   declarations: [
     ChambreListComponent,
-    AddChambreComponent
+    AddChambreComponent,
+    EditChambreComponent
   ],
   imports: [
     CommonModule,

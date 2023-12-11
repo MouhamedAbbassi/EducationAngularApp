@@ -2,11 +2,30 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BlocService } from 'src/app/Services/Bloc/bloc.service';
+import { trigger, style, animate, transition, state } from '@angular/animations';
 
 @Component({
   selector: 'app-add-bloc',
   templateUrl: './add-bloc.component.html',
-  styleUrls: ['./add-bloc.component.css']
+  styleUrls: ['./add-bloc.component.css'],
+  animations: [
+    trigger('buttonAnimation', [
+      state('enabled', style({
+        transform: 'translateX(0)',
+      })),
+      state('left', style({
+        transform: 'translateX(-100px)', // Adjust the value based on your preference
+      })),
+
+      state('right', style({
+        transform: 'translateX(150px)', // Adjust the value based on your preference
+      })),
+
+      transition('* => left', animate('200ms ease-out')),
+      transition('* => right', animate('200ms ease-out')),
+      transition('* => enabled', animate('200ms ease-out')),
+    ]),
+  ],
 })
 export class AddBlocComponent {
   foyerNames: string[] = [];
@@ -49,6 +68,34 @@ export class AddBlocComponent {
       }
     );
   }
+
+
+
+ buttonState = 'enabled';
+
+  onMouseEnter() {
+
+    if( this.buttonState =='enabled')
+      this.buttonState ='right'
+
+    else if(this.buttonState =='right')
+      this.buttonState = 'left';
+
+    else if(this.buttonState =='left')
+      this.buttonState = 'right';
+
+
+
+    }
+
+  onMouseLeave() {
+    if( this.buttonState =='left')
+      this.buttonState ='left'
+
+     else if(this.buttonState =='right')
+      this.buttonState = 'right';
+  }
+
 
 
 }

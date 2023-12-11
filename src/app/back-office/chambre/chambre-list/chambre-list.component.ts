@@ -10,11 +10,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ChambreListComponent {
   constructor(private es: ChambreService,private ac:ActivatedRoute,private router:Router){};
   chambre : any;
-
+  NotfilteredChambres :any;
+  filteredChambres:any;
+  nomBlocFilter: string = '';
 
 ngOnInit(): void {
+
+
   this.es.getAllData().subscribe((response) => {this.chambre = response})
+  this.es.getAllData().subscribe((response) => {this.filteredChambres = response})
+  this.es.getAllData().subscribe((response) => {this.NotfilteredChambres = response})
 }
+
+
 delete(id:any)
 {
  this.es.deleteChambre(id).subscribe(()=>{
@@ -24,5 +32,22 @@ delete(id:any)
    console.log(error);
  });
 }
+
+
+
+
+
+applyFilter() {
+  console.log('Filter applied:', this.nomBlocFilter);
+  if (this.nomBlocFilter.trim() === '') {
+    this.filteredChambres = this.NotfilteredChambres;
+  } else {
+    this.filteredChambres = this.chambre.filter(
+      (chambre: any) =>
+        chambre.nomBloc.toLowerCase() === this.nomBlocFilter.toLowerCase()
+    );
+  }
+}
+
 
 }

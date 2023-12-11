@@ -10,16 +10,16 @@ import { BlocService } from 'src/app/Services/Bloc/bloc.service';
 export class BlocListComponent {
 
 bloc: any ;
-
+NotfilteredBlocs :any;
+filteredBlocs:any;
+nomFoyerFilter: string = '';
 constructor(private es: BlocService,private ac:ActivatedRoute,private router:Router){};
 
 ngOnInit(): void {
   this.es.getAllData().subscribe((response) => {this.bloc = response})
 
-  /*this.es.deleteBloc(this.ac.snapshot.params['idBloc']).subscribe(
-    ()=>
-      this.router.navigate(['back/bloc/bloclist'])
-  )*/
+  this.es.getAllData().subscribe((response) => {this.filteredBlocs = response})
+  this.es.getAllData().subscribe((response) => {this.NotfilteredBlocs = response})
 }
 
 delete(id:any)
@@ -30,6 +30,20 @@ delete(id:any)
  },error =>{
    console.log(error);
  });
+}
+
+
+
+applyFilter() {
+  console.log('Filter applied:', this.nomFoyerFilter);
+  if (this.nomFoyerFilter.trim() === '') {
+    this.filteredBlocs = this.NotfilteredBlocs;
+  } else {
+    this.filteredBlocs = this.filteredBlocs.filter(
+      (bloc: any) =>
+        bloc.nomFoyer.toLowerCase() === this.nomFoyerFilter.toLowerCase()
+    );
+  }
 }
 
 }

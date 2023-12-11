@@ -26,5 +26,11 @@ export class ChambreService {
 deleteChambre(id:any) {
   return this.httpClient.delete('http://localhost:8080/chambre/delete/'+id);
 }
+editChambre(id: any,chambre:any): Observable<any> {
+  return this.httpClient.put('http://localhost:8080/chambre/update/'+id, chambre);
+}
+getChambre(id:any) {
+  return this.httpClient.get('http://localhost:8080/chambre/getId/'+id);
+}
 
 }
