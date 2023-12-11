@@ -11,8 +11,7 @@ import 'jspdf-autotable';
 
 @Component({
   selector: 'app-reservation',
-  templateUrl: './reservation.component.html',
-  styleUrls: ['./reservation.component.css']
+  templateUrl: './reservation.component.html'
 })
 export class ReservationComponent implements OnInit {
 

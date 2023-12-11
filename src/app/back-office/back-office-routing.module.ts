@@ -9,12 +9,11 @@ const routes: Routes = [
     canActivate:[AdminGuard],
     component: BackOfficeComponent,
     children: [
-      {path:"bloc",loadChildren:()=>
-        import('./bloc/bloc.module').then(m=>m.BlocModule)},
-      {path:"chambre",loadChildren:()=>
-        import('./chambre/chambre.module').then(m=>m.ChambreModule)},
-      {path:"reservation",loadChildren:()=>
-        import('./reservation/reservation.module').then(m=>m.ReservationModule)},
+      {path:"bloc",loadChildren:()=> import('./bloc/bloc.module').then(m=>m.BlocModule)},
+       {path:"universite",loadChildren:()=> import('./universite/universite.module').then(m=>m.UniversiteModule)},
+        {path:"foyer",loadChildren:()=> import('./foyer/foyer.module').then(m=>m.FoyerModule)},
+      {path:"chambre",loadChildren:()=>   import('./chambre/chambre.module').then(m=>m.ChambreModule)},
+      {path:"reservation",loadChildren:()=>   import('./reservation/reservation.module').then(m=>m.ReservationModule)},
       {path:"dashboard", component:HomeBackComponent}
 
 ]}];
