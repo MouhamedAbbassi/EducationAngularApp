@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { BlocModule } from './bloc/bloc.module';
 import {HttpClientModule} from '@angular/common/http' ;
 import { FormsModule } from '@angular/forms';
+import { ReservationModule } from './reservation/reservation.module';
 
 
 
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
+
 
 
     BackOfficeComponent,
@@ -28,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     BackOfficeRoutingModule,
     BlocModule,
+    ReservationModule,
     HttpClientModule,
     FormsModule,
   ]

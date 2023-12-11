@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {NgForm} from "@angular/forms";
+import {AuthService} from "../../service/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-reset',
@@ -7,9 +9,20 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./reset.component.css']
 })
 export class ResetComponent {
-  form: any;
+
+  form: any={};
+  constructor(private authService:AuthService,private _router:Router) {
+  }
+
 
   onSubmit(a: NgForm) {
+   this.authService.getOtp(this.form).subscribe(()=>{
+     this._router.navigate(['user/reset-password-done']);
+
+   },error => {
+     console.log(error);
+
+   });
 
   }
 }

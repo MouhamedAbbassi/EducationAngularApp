@@ -17,6 +17,7 @@ const httpOptions = {
 export class AuthService {
   public loginStatusSubject =new Subject<boolean>();
 
+
   constructor(private http: HttpClient) { }
 
   signup(user: any) {
@@ -33,5 +34,17 @@ export class AuthService {
 
   test() {
     return this.http.get('http://localhost:8080/api/user');
+  }
+  getOtp(email:any)
+  {
+    return this.http.post('http://localhost:8080/api/auth/otp',email,{responseType:'text'});
+
+  }
+  resertPassword(email:any,password:any,otp:any)
+
+  {
+    const body = { email, otp, password };
+    return this.http.post('http://localhost:8080/api/auth/resetPasswordDone',body,{responseType:'text'});
+
   }
 }
